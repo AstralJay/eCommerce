@@ -1,69 +1,77 @@
-# React + TypeScript + Vite
+# 🛒 eCommerce Website Clone - Product Listing App (inspired by eBay, Facebook Marketplace etc)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple e-commerce frontend built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. It fetches products from the [DummyJSON API](https://dummyjson.com/) and allows users to browse, filter, and view individual product details.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🛍️ Product grid with images, titles, and prices
+- 🔍 Search and keyword filtering
+- 🧩 Category selection using radio buttons
+- 💰 Price range filter
+- 📦 Pagination
+- 📄 Dedicated product detail page
+- ⚛️ Context API for global filter state
+- 🧼 Reset filter functionality
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+src/
+│
+├── components/
+│ ├── Sidebar.tsx # Filters and search
+│ ├── MainContent.tsx # Product grid with pagination
+│ ├── ProductPage.tsx # Product details
+│ ├── BookCard.tsx # Individual product card
+│
+├── context/
+│ └── FilterContext.tsx # Context provider for filters
+│
+├── App.tsx # Routes and layout
+├── main.tsx # Root rendering with providers
+├── index.css # Tailwind CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+yaml
+Copy
+Edit
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧪 API Used
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **DummyJSON** – `https://dummyjson.com/products`
+
+Example endpoints:
+- `GET /products` — list of products
+- `GET /products/search?q=term`
+- `GET /products/:id` — single product
+
+---
+
+🔧 Tech Stack
+⚛️ React + TypeScript
+
+⚡ Vite
+
+💨 Tailwind CSS
+
+🌐 Axios
+
+📦 React Router DOM
+
+🎯 Context API
+
+🎯 Future Improvements
+Add cart functionality
+
+User login/auth
+
+Sorting by date or brand
+
+Real API integration
+
+📄 License
+This project is open-source and available under the MIT License.
